@@ -25,3 +25,4 @@ class PaymentHandler(ServerHandler):
             raise Exception("Square Online server has returned an error for payments.")
 
     def make_payment(self):
+        pass

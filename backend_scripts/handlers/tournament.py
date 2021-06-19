@@ -21,10 +21,8 @@ class TournamentHandler(ServerHandler):
         self.customer_groups = self.square.customer_groups
 
     # Create a new instance of customer with JSONObject
-    @staticmethod
     def create_tournament(self, details):
-        event_name = details["name"]
-        if self.customer_groups.create_customer_group().is_success():
+        if self.customer_groups.create_customer_group(details).is_success():
             self.tournament = Tournament(details)
 
         return self.tournament is not None
