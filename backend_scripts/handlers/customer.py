@@ -4,8 +4,6 @@ from .server_handler import ServerHandler
 """
 Square Customer Object Handler between the Square Client and Square Online server
 """
-
-
 class CustomerHandler(ServerHandler):
     # TODO: Create proper variables to perform correct actions based on assignment of APIs in server
 
@@ -37,11 +35,6 @@ class CustomerHandler(ServerHandler):
         for detail in customer_details:
             participant_info[detail] = detail
 
-        return self.customers.create_customer(body).is_success()
+        return self.customers.create_customer(participant_info).is_success()
 
-    def register_participant(self, customer_details, paid, tournament_avail):
-        if self.tournament is None:
-            raise Exception("Cannot find any tournament listings in Square Database")
 
-        if self.create_participant(customer_details) and paid and tournamen_avail:
-            pass
