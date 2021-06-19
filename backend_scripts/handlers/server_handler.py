@@ -3,12 +3,11 @@ from square.client import Client
 
 # General listener for messages from any server
 class ServerHandler:
-    def __init__(self, client_ip, token=None):
-        self.client_ip = client_ip
-
-        if token:
+    def __init__(self, square_token=None, environment='sandbox'):
+        if square_token:
+            print(type(square_token))
             try:
-                self.square = Client(access_token=access_token)
+                self.square = Client(access_token=square_token, environment=environment)
             except:
                 raise Exception("Invalid token, cannot create Square Client.")
 
