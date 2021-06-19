@@ -12,7 +12,6 @@ class CustomerHandler(ServerHandler):
     def __init__(self):
         super().__init__()
         self.register = REGISTER
-        self.flask = Flask("Customer")
         self.customers = self.square.customers
 
     @property

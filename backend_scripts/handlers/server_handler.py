@@ -5,7 +5,6 @@ from square.client import Client
 class ServerHandler:
     def __init__(self, square_token=None, environment='sandbox'):
         if square_token:
-            print(type(square_token))
             try:
                 self.square = Client(access_token=square_token, environment=environment)
             except:
